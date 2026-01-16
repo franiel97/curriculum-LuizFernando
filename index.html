@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Painel Industrial | Luiz Fernando Rodrigues</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+    --orange: #f97316;
+    --yellow: #facc15;
+    --cyan: #06b6d4;
+
+    /* DARK */
+    --bg-dark: #020617;
+    --panel-dark: #020617;
+    --border-dark: #1e293b;
+    --text-dark: #e5e7eb;
+
+    /* LIGHT OLD SCHOOL */
+    --bg-light: #e6e2d3;
+    --panel-light: #f5f1e6;
+    --border-light: #7c7c7c;
+    --text-light: #1c1c1c;
+    --steel: #b0b0b0;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-dark);
+    transition: .4s;
+}
+
+body.light {
+    background: var(--bg-light);
+    color: var(--text-light);
+}
+
+/* BOTÕES TOPO */
+.top-actions {
+    position: fixed;
+    top: 45px;
+    right: 35px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.top-actions button {
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: linear-gradient(135deg,var(--orange),var(--yellow));
+    color:#000;
+    box-shadow: 0 6px 18px rgba(0,0,0,.5);
+}
+
+body.light .top-actions button {
+    background: linear-gradient(135deg,#999,#ddd);
+    box-shadow: inset 0 0 10px rgba(0,0,0,.3);
+}
+
+@media(max-width:900px){
+    .top-actions{display:none;}
+}
+
+/* LAYOUT */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #020617, #1e293b);
+    border: 3px solid var(--orange);
+    border-radius: 20px;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,.6);
+    position: relative;
+}
+
+body.light .header {
+    background: linear-gradient(135deg, #d6d2c4, #f5f1e6);
+    box-shadow: inset 0 0 20px rgba(0,0,0,.15);
+}
+
+.header h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--orange)
+}
+
+.header p {
+    opacity: .8;
+}
+
+/* GEAR */
+.gear {
+    position: absolute;
+    right: 30px;
+    bottom: 15px;
+    font-size: 60px;
+    opacity: .2;
+    animation: spin 12s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+@media(max-width:900px){
+    .grid{grid-template-columns:1fr;}
+}
+
+/* CARD */
+.card {
+    background: var(--panel-dark);
+    border: 2px solid var(--border-dark);
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 25px rgba(0,0,0,.6);
+}
+
+body.light .card {
+    background: var(--panel-light);
+    border: 2px solid var(--border-light);
+    box-shadow: inset 0 0 15px rgba(0,0,0,.15);
+}
+
+.card h2 {
+    color: var(--yellow);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+body.light .card h2 {
+    color: #5c4b1a;
+}
+
+/* CONTACT */
+.contact {
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 2px dashed var(--orange);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.contact:hover {
+    background: rgba(249,115,22,.15);
+    box-shadow: 0 0 15px rgba(249,115,22,.4);
+}
+
+body.light .contact {
+    border: 2px dashed #7c7c7c;
+}
+
+body.light .contact:hover {
+    background: rgba(0,0,0,.08);
+    box-shadow: inset 0 0 10px rgba(0,0,0,.2);
+}
+
+/* TIMELINE */
+.timeline {
+    border-left: 4px solid var(--orange);
+    padding-left: 20px;
+}
+
+.job {margin-bottom:25px;}
+
+/* DOCK */
+.dock {
+    display:none;
+}
+
+@media(max-width:720px){
+    .dock{
+        position:fixed;
+        bottom:15px;
+        left:50%;
+        transform:translateX(-50%);
+        background: rgba(2,6,23,.95);
+        border-radius: 50px;
+        padding: 15px 25px;
+        display:flex;
+        gap:20px;
+        border:2px solid var(--orange);
+        z-index:999;
+        backdrop-filter: blur(8px);
+    }
+
+    body.light .dock{
+        background: rgba(230,226,211,.95);
+        border:2px solid var(--border-light);
+    }
+
+    .dock button{
+        width:60px;
+        height:60px;
+        border-radius:50%;
+        border:none;
+        cursor:pointer;
+        font-size:22px;
+        color:#fff;
+        box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        transition:.3s;
+    }
+
+    .dock button:nth-child(1){ background: #22c55e; }
+    .dock button:nth-child(2){ background: #0ea5e9; }
+    .dock button:nth-child(3){ background: #ef4444; }
+    .dock button:nth-child(4){ background: #facc15; color:#000; }
+
+    .dock button:hover{
+        transform: translateY(-4px) scale(1.05);
+    }
+}
+
+/* PRINT */
+@media print{
+    .dock,.top-actions{display:none;}
+    .grid{grid-template-columns:1fr;}
+}
+</style>
+
+<script>
+function whatsapp(){
+    window.open("https://wa.me/5535992172174","_blank");
+}
+function email(){
+    window.location.href="mailto:luizferlorena@gmail.com";
+}
+function toggleTheme(){
+    document.body.classList.toggle("light");
+}
+</script>
+</head>
+
+<body>
+
+<!-- BOTÕES TOPO -->
+<div class="top-actions">
+    <button onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i> Tema</button>
+    <button onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+</div>
+
+<div class="container">
+
+<div class="header">
+    <div>
+        <h1>Luiz Fernando Rodrigues</h1>
+        <p>Operador de Máquina Industrial • Pouso Alegre - MG</p>
+    </div>
+    <i class="fa-solid fa-gear gear"></i>
+</div>
+
+<div class="grid">
+
+<!-- SIDEBAR -->
+<div>
+
+<div class="card">
+<h2>Central de Contato</h2>
+<div class="contact" onclick="whatsapp()"><i class="fa-brands fa-whatsapp"></i> (35) 99217-2174</div>
+<div class="contact" onclick="email()"><i class="fa-solid fa-envelope"></i> luizferlorena@gmail.com</div>
+</div>
+
+<div class="card">
+<h2>Formação</h2>
+<p>Ensino Médio Completo</p>
+</div>
+
+<div class="card">
+<h2>Cursos</h2>
+<p>Informática Básica (Word, Excel, PowerPoint, Internet)</p>
+</div>
+
+</div>
+
+<!-- MAIN -->
+<div>
+
+<div class="card">
+<h2>Objetivo Profissional</h2>
+<p>
+Atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança,
+qualidade e eficiência em ambientes de alta performance.
+</p>
+</div>
+
+<div class="card">
+<h2>Perfil Profissional</h2>
+<p>
+Profissional da área industrial com sólida experiência em operação, monitoramento e manutenção
+de máquinas industriais.
+</p>
+</div>
+
+<div class="card">
+<h2>Experiência Profissional</h2>
+
+<div class="timeline">
+
+<div class="job">
+<strong>HT Cabos e Tecnologia Ltda</strong><br>
+Operador de Máquina II — 2023
+</div>
+
+<div class="job">
+<strong>CIMED</strong><br>
+Operador de Máquina I e II — 2023 a 2024
+</div>
+
+<div class="job">
+<strong>Aethra Sistemas Automotivos</strong><br>
+Montador de Veículos — 2022
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- DOCK MOBILE -->
+<div class="dock">
+    <button onclick="whatsapp()"><i class="fa-brands fa-whatsapp"></i></button>
+    <button onclick="email()"><i class="fa-solid fa-envelope"></i></button>
+    <button onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+    <button onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i></button>
+</div>
+
+</body>
+</html>
