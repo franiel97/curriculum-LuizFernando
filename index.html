@@ -12,6 +12,7 @@
     --orange: #f97316;
     --yellow: #facc15;
     --cyan: #06b6d4;
+	--brown: #6c3c0c;
 
     /* DARK */
     --bg-dark: #020617;
@@ -44,15 +45,16 @@ body.light {
 .top-actions {
     position: fixed;
     top: 45px;
-    right: 35px;
+    right: 40px;
     display: flex;
-    gap: 15px;
+    gap: 10px;
     z-index: 1000;
+	opacity: .90;
 }
 
 .top-actions button {
     padding: 12px 18px;
-    border-radius: 12px;
+    border-radius: 25px;
     border: none;
     cursor: pointer;
     font-weight: bold;
@@ -62,7 +64,7 @@ body.light {
 }
 
 body.light .top-actions button {
-    background: linear-gradient(135deg,#999,#ddd);
+    background: linear-gradient(265deg,var(--orange),var(--yellow));
     box-shadow: inset 0 0 10px rgba(0,0,0,.3);
 }
 
@@ -74,15 +76,15 @@ body.light .top-actions button {
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 25px;
+    padding: 20px;
 }
 
 /* HEADER */
 .header {
     background: linear-gradient(135deg, #020617, #1e293b);
     border: 3px solid var(--orange);
-    border-radius: 20px;
-    padding: 35px;
+    border-radius: 25px;
+    padding: 15px;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -109,12 +111,14 @@ body.light .header {
 /* GEAR */
 .gear {
     position: absolute;
-    right: 30px;
+    right: 15px;
     bottom: 15px;
     font-size: 60px;
-    opacity: .2;
+    opacity: .65;
     animation: spin 12s linear infinite;
+	color: var(--brown);
 }
+
 
 @keyframes spin {
     from { transform: rotate(0); }
@@ -125,7 +129,7 @@ body.light .header {
 .grid {
     display: grid;
     grid-template-columns: 360px 1fr;
-    gap: 25px;
+    gap: 5px;
     margin-top: 25px;
 }
 
@@ -137,21 +141,21 @@ body.light .header {
 .card {
     background: var(--panel-dark);
     border: 2px solid var(--border-dark);
-    border-radius: 18px;
-    padding: 25px;
-    margin-bottom: 20px;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 15px;
     box-shadow: inset 0 0 25px rgba(0,0,0,.6);
 }
 
 body.light .card {
     background: var(--panel-light);
     border: 2px solid var(--border-light);
-    box-shadow: inset 0 0 15px rgba(0,0,0,.15);
+    box-shadow: inset 0 0 25px rgba(0,0,0,.5);
 }
 
 .card h2 {
     color: var(--yellow);
-    margin-bottom: 15px;
+    margin: 5px;
     text-transform: uppercase;
     font-size: 17px;
     letter-spacing: 1px;
@@ -163,9 +167,9 @@ body.light .card h2 {
 
 /* CONTACT */
 .contact {
-    padding: 14px;
-    border-radius: 12px;
-    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 15px;
     border: 2px dashed var(--orange);
     cursor: pointer;
     transition: .3s;
@@ -177,21 +181,24 @@ body.light .card h2 {
 }
 
 body.light .contact {
-    border: 2px dashed #7c7c7c;
+    border: 2px dashed var(--orange);
+
 }
 
 body.light .contact:hover {
-    background: rgba(0,0,0,.08);
-    box-shadow: inset 0 0 10px rgba(0,0,0,.2);
+    background: rgba(255,215,0,.15);
+    box-shadow: 0 0 25px rgba(255,215,0,.6);
 }
 
 /* TIMELINE */
 .timeline {
     border-left: 4px solid var(--orange);
-    padding-left: 20px;
+    padding-left: 15px;
 }
 
-.job {margin-bottom:25px;}
+.job p{
+	padding-left: 15px;
+}
 
 /* DOCK */
 .dock {
@@ -328,17 +335,17 @@ de máquinas industriais.
 
 <div class="job">
 <strong>HT Cabos e Tecnologia Ltda</strong><br>
-Operador de Máquina II — 2023
+<p>Operador de Máquina II — 2023</p>
 </div>
 
 <div class="job">
 <strong>CIMED</strong><br>
-Operador de Máquina I e II — 2023 a 2024
+<p>Operador de Máquina I e II — 2023 a 2024</p>
 </div>
 
 <div class="job">
 <strong>Aethra Sistemas Automotivos</strong><br>
-Montador de Veículos — 2022
+<p>Montador de Veículos — 2022</p>
 </div>
 
 </div>
@@ -359,4 +366,3 @@ Montador de Veículos — 2022
 
 </body>
 </html>
-
