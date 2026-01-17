@@ -68,10 +68,6 @@ body.light .top-actions button {
     box-shadow: inset 0 0 10px rgba(0,0,0,.3);
 }
 
-@media(max-width:900px){
-    .top-actions{display:none;}
-}
-
 /* LAYOUT */
 .container {
     max-width: 1200px;
@@ -108,6 +104,19 @@ body.light .header {
     opacity: .8;
 }
 
+.local{
+	font-size: 12px;
+	margin-top: -10px;
+	text-align: left;
+}
+
+.objetivo{
+	font-size: 16px;
+	text-align: left;
+	padding-right: 15%;
+	
+}
+
 /* GEAR */
 .gear {
     position: absolute;
@@ -133,17 +142,13 @@ body.light .header {
     margin-top: 25px;
 }
 
-@media(max-width:900px){
-    .grid{grid-template-columns:1fr;}
-}
-
 /* CARD */
 .card {
     background: var(--panel-dark);
     border: 2px solid var(--border-dark);
     border-radius: 25px;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
     box-shadow: inset 0 0 25px rgba(0,0,0,.6);
 }
 
@@ -193,32 +198,53 @@ body.light .contact:hover {
 /* TIMELINE */
 .timeline {
     border-left: 4px solid var(--orange);
-    padding-left: 15px;
+    padding: 15px;
 }
+
 
 .job p{
 	padding-left: 15px;
+	margin: 4px;
+	font-size: 14px
 }
 
+.copy p{
+	text-align: center;
+	font-size: 12px;
+	padding-bottom: 0;
+	}
+	
 /* DOCK */
 .dock {
     display:none;
 }
 
-@media(max-width:720px){
+
+@media(max-width:798px){
+	.grid{grid-template-columns:1fr;}
+	.top-actions{display:none;}
+	.local{
+		padding-right: 10%;
+	}
+
+	.objetivo{
+		padding-right: 10%;
+	}
     .dock{
         position:fixed;
         bottom:15px;
         left:50%;
         transform:translateX(-50%);
-        background: rgba(2,6,23,.95);
+        background: (var(--blue), .2);
+		backdrop-filter: blur(2px);
         border-radius: 50px;
-        padding: 15px 25px;
+        padding: 5px 25px;
         display:flex;
-        gap:20px;
+        gap: 15px;
         border:2px solid var(--orange);
         z-index:999;
-        backdrop-filter: blur(8px);
+
+		padding-top: 5px;
     }
 
     body.light .dock{
@@ -246,12 +272,21 @@ body.light .contact:hover {
     .dock button:hover{
         transform: translateY(-4px) scale(1.05);
     }
+	.copy p{
+	text-align: left;
+	font-size: 12px;
+	padding-right: 80%;
+	margin-top: -15px;
+	margin-left: 15px;
+	}
 }
 
 /* PRINT */
 @media print{
     .dock,.top-actions{display:none;}
     .grid{grid-template-columns:1fr;}
+	.copy p{display: none;}
+	}
 }
 </style>
 
@@ -281,7 +316,10 @@ function toggleTheme(){
 <div class="header">
     <div>
         <h1>Luiz Fernando Rodrigues</h1>
-        <p>Operador de Máquina Industrial • Pouso Alegre - MG</p>
+		<div class="local"><p>📍 Pouso Alegre - MG - 🇧🇷</p></div>
+        <div class="objetivo"><p>✨Operador de Máquina Industrial | Operador de Produção ✨</p>
+			<p> 🚧 Meu objetivo é atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança, qualidade e eficiência em ambientes de alta performance.</p>
+		</div>
     </div>
     <i class="fa-solid fa-gear gear"></i>
 </div>
@@ -312,19 +350,14 @@ function toggleTheme(){
 <!-- MAIN -->
 <div>
 
-<div class="card">
-<h2>Objetivo Profissional</h2>
-<p>
-Atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança,
-qualidade e eficiência em ambientes de alta performance.
-</p>
-</div>
+
 
 <div class="card">
 <h2>Perfil Profissional</h2>
-<p>
-Profissional da área industrial com sólida experiência em operação, monitoramento e manutenção
-de máquinas industriais.
+<p> Sou profissional da área industrial com cerca de 3 anos de experiência em operação de máquinas e linhas de produção.
+Atuo com foco em segurança, qualidade e eficiência, possuo perfil proativo, facilidade de aprendizado e alto senso de
+responsabilidade. Tenho experiência em manutenção preventiva e corretiva, além de vivência com máquinas de envase, mistura
+de fibra óptica, prensa, solda industrial e montagem automotiva.
 </p>
 </div>
 
@@ -334,18 +367,30 @@ de máquinas industriais.
 <div class="timeline">
 
 <div class="job">
-<strong>HT Cabos e Tecnologia Ltda</strong><br>
-<p>Operador de Máquina II — 2023</p>
+<strong>CIMED</strong> — Operador de Máquina I e II (Jul/2023 ⮕ Ago/2024) <br>
+	<p> • Operação de máquinas de envase no setor produtivo.</p>
+	<p> • Monitoramento contínuo dos processos produtivos.</p>
+	<p> • Realização de manutenção preventiva e corretiva.</p>
+	<p> • Controle de materiais e insumos.</p>
+	<p> • Preenchimento de planilhas, relatórios e registros de produção.</p>
+	<p> • Atuação com foco em segurança, qualidade e produtividade.</p>
 </div>
 
 <div class="job">
-<strong>CIMED</strong><br>
-<p>Operador de Máquina I e II — 2023 a 2024</p>
+<strong>HT Cabos e Tecnologia Ltda</strong> — Operador de Máquina II (Jan/2023 ⮕ Maio/2023)<br>
+	<p>• Operação de máquina de mistura de fibra óptica – Modelo SZ.</p>
+	<p>• Monitoramento do processo produtivo.</p>
+	<p>• Execução de manutenção básica e preventiva.</p>
+	<p>• Preenchimento de checklists e controles operacionais.</p>
+	<p>• Atuação conforme normas de segurança e qualidade.</p>
 </div>
 
 <div class="job">
-<strong>Aethra Sistemas Automotivos</strong><br>
-<p>Montador de Veículos — 2022</p>
+<strong>Aethra Sistemas Automotivos</strong> — Montador de Veículos - Linha de Produção (Fev/2023 ⮕ Jun/2022)<br>
+	<p>• Montagem de peças e componentes automotivos.</p>
+	<p>• Execução de reparos e ajustes técnicos.</p>
+	<p>• Controle de materiais e organização do posto de trabalho.</p>
+	<p>• Inspeção de qualidade com foco em precisão e acabamento.</p>
 </div>
 
 </div>
@@ -355,7 +400,9 @@ de máquinas industriais.
 </div>
 
 </div>
-
+	<div class="copy">
+			<p>Desenvolvido por: <a href="https://wa.me/5511992091856?text=$Olá, Franiel!">Franiel.Inc | 2026</a></p>
+	</div>
 <!-- DOCK MOBILE -->
 <div class="dock">
     <button onclick="whatsapp()"><i class="fa-brands fa-whatsapp"></i></button>
@@ -366,3 +413,4 @@ de máquinas industriais.
 
 </body>
 </html>
+
