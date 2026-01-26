@@ -11,6 +11,8 @@
 </svg>">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
+
 
 <style>
 
@@ -32,32 +34,33 @@
 
 
 *{
-box-sizing:border-box;
+	box-sizing:border-box;
 }
 
 body{
-margin:0;
-font-family:Segoe UI,Arial;
-background:var(--bg-light);
-color:var(--text-light);
-transition:.3s;
+	margin:0;
+	font-family:Segoe UI,Arial;
+	background:var(--bg-light);
+	color:var(--text-light);
+	transition:.3s;
 }
 
 /* DARK MODE */
 
 body.dark{
-background:var(--bg-dark);
-color:var(--text-dark);
+	background:var(--bg-dark);
+	color:var(--text-dark);
 }
 
 
 .top-actions{
-position:fixed;
-top: 25px;
-right: 35px;
-display:flex;
-gap:10px;
-z-index:1000;
+position: relative;
+    top: 50px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+    justify-content: flex-end;
 }
 
 .top-actions button{
@@ -124,35 +127,35 @@ body.dark .header{
 }
 
 .card{
-background:var(--panel-light);
-border:2px solid var(--border-light);
-border-radius:25px;
-padding:10px;
-margin-bottom:8px;
+	background:var(--panel-light);
+	border:2px solid var(--border-light);
+	border-radius:25px;
+	padding:10px;
+	margin-bottom:8px;
 }
 
 body.dark .card{
-background:var(--panel-dark);
-border-color:var(--border-dark);
+	background:var(--panel-dark);
+	border-color:var(--border-dark);
 }
 
 .card h2{
-margin:2px 0;
-color:#5c4b1a;
-font-size:18px;
-text-transform:uppercase;
+	margin:2px 0;
+	color:#5c4b1a;
+	font-size:18px;
+	text-transform:uppercase;
 }
 
 body.dark .card h2{color:var(--yellow)}
 
 .contact{
-border:2px dashed var(--orange);
-border-radius:25px;
-padding:10px;
-margin-bottom:10px;
-text-align:center;
-cursor:pointer;
-font-size: 12px;
+	border:2px dashed var(--orange);
+	border-radius:25px;
+	padding:10px;
+	margin-bottom:10px;
+	text-align:center;
+	cursor:pointer;
+	font-size: 12px;
 }
 
 .contact:hover{
@@ -161,13 +164,13 @@ font-size: 12px;
 }
 
 .card p {
- margin: 5px;
+	margin: 5px;
 }
 
 .timeline{
-border-left:3px solid var(--orange);
-padding-left:15px;
-border-radius: 5px;
+	border-left:3px solid var(--orange);
+	padding-left:15px;
+	border-radius: 5px;
 }
 
 .job p{margin:4px;font-size:14px}
@@ -179,42 +182,42 @@ border-radius: 5px;
 @media(max-width:800px){
 
 .header h1{
-font-size: 2em;
+	font-size: 2em;
 }
 
 .grid{grid-template-columns:1fr}
 .top-actions{display:none}
 
 .dock{
-display:flex;
-position:fixed;
-bottom:15px;
-left:50%;
-transform:translateX(-50%);
-gap:10px;
-padding: 6px 10px;
-border-radius:40px;
-border:2px solid var(--border-light);
-background:rgba(--bg-light .8);
-backdrop-filter:blur(4px);
-cursor: pointer;
+	display:flex;
+	position:fixed;
+	bottom:15px;
+	left:50%;
+	transform:translateX(-50%);
+	gap:10px;
+	padding: 6px 10px;
+	border-radius:40px;
+	border:2px dashed var(--orange);
+	/*background:rgba(--bg-light .8);*/
+	backdrop-filter:blur(4px);
+	cursor: pointer;
 }
 
 .dock button{
-width:50px;
-height: 50px;
-border-radius:50%;
-border:none;
-color:#fff;
-font-size:22px;
-cursor: pointer;
+	width:50px;
+	height: 50px;
+	border-radius:50%;
+	border:none;
+	color:#fff;
+	font-size:22px;
+	cursor: pointer;
 }
 
 .gear{
-position:absolute;
-bottom: 110px;
-font-size: 72px;
-animation:spin 6s linear infinite;
+	position:absolute;
+	bottom: 110px;
+	font-size: 72px;
+	animation:spin 6s linear infinite;
 }
 
 .dock button:nth-child(1){background:#22c55e}
@@ -238,28 +241,28 @@ animation:spin 6s linear infinite;
 
 @media print{
 
-@page{size:A4;margin:10mm}
+@page{size:A4;margin:8mm}
 
 body.print-light{
-background:#fff!important;
-color:#000!important;
+	background:#fff!important;
+	color:#000!important;
 }
 
 body.print-light .card,
 body.print-light .header{
-background:#fff!important;
-border-color:#7c7c7c!important;
-color:#000!important;
+	background:#fff!important;
+	border-color:#7c7c7c!important;
+	color:#000!important;
 }
 
 body.print-light h1{
 	margin: 0;
-    color: var(--orange);
+    color: var(--orange) !important;
     font-size: 3em;
 }
 body.print-light h2{
     margin: 2px 0;
-    color: #5c4b1a;
+    color: #42381b !important;
     font-size: 18px;
     text-transform: uppercase;
 }
@@ -274,14 +277,17 @@ body.dark{background:#fff!important}
 .container{max-width:100%;padding:0}
 
 .grid{
-display:grid!important;
-grid-template-columns:1fr 2fr;
-gap:10px;
+	display:grid!important;
+	grid-template-columns:1fr 2fr;
+	gap:10px;
 }
 
 .card,.header,.job{page-break-inside:avoid}
 
-.gear{animation:none}
+.gear{
+	bottom: 90px !important;
+	animation:none
+	}
 
 }
 
@@ -294,19 +300,19 @@ gap:10px;
 <body>
 
 <div class="container">
-
+	<div class="top-actions">
+			<button onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i> Tema</button>
+			<button onclick="printPDF()"><i class="fa-solid fa-file-pdf"></i> Imprimir em PDF</button>
+	</div>
 <div class="header">
-		<div class="top-actions">
-			<button onclick="toggleTheme()">Tema</button>
-			<button onclick="printPDF()">PDF</button>
-		</div>
 <div>
 	<h1>Luiz Fernando Rodrigues</h1>
-		<div class="local"><p>📍 Maria da Fé - MG - 🇧🇷</p></div>
+		<div class="local"><p>📍 Maria da Fé - MG	<span class="fi fi-br"></span></p></div> 
 	<div class="objetivo">
 		<p>✨Operador de Máquina Industrial | Operador de Produção ✨</p>
 		<p>🚧 Meu objetivo é atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança, qualidade e eficiência em ambientes de alta performance.</p>
 	</div>
+
 	</div>
 		<i class="fa-solid fa-gear gear"></i>
 	</div>
