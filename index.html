@@ -53,41 +53,41 @@ color:var(--text-dark);
 
 .top-actions{
 position:fixed;
-top:45px;
-right:40px;
+top: 25px;
+right: 35px;
 display:flex;
 gap:10px;
 z-index:1000;
 }
 
 .top-actions button{
-padding:12px 18px;
-border-radius:25px;
-border:none;
-cursor:pointer;
-font-weight:bold;
-background:linear-gradient(135deg,var(--orange),var(--yellow));
+	padding:12px 18px;
+	border-radius:25px;
+	border:none;
+	cursor:pointer;
+	font-weight:bold;
+	background:linear-gradient(135deg,var(--orange),var(--yellow));
 }
 
 
 .container{
-max-width:1200px;
-margin:auto;
-padding:10px;
+	max-width:1200px;
+	margin:auto;
+	padding:10px;
 }
 
 .header{
-background:linear-gradient(135deg,#d6d2c4,#f5f1e6);
-border:3px solid var(--orange);
-border-radius:25px;
-padding:10px;
-display:grid;
-grid-template-columns:8fr 1fr;
-position:relative;
+	background:linear-gradient(135deg,#d6d2c4,#f5f1e6);
+	border:3px solid var(--orange);
+	border-radius:25px;
+	padding:10px;
+	display:grid;
+	grid-template-columns:8fr 1fr;
+	position:relative;
 }
 
 body.dark .header{
-background:linear-gradient(135deg,#020617,#1e293b);
+	background:linear-gradient(135deg,#020617,#1e293b);
 }
 
 .header h1{
@@ -101,21 +101,26 @@ background:linear-gradient(135deg,#020617,#1e293b);
 .objetivo{font-size:14px;}
 
 .gear{
-position:absolute;
-right:15px;
-bottom:15px;
-font-size:60px;
-color:var(--brown);
-animation:spin 6s linear infinite;
+	position:absolute;
+	right:15px;
+	bottom:15px;
+	font-size:60px;
+	color:var(--brown);
+	animation:spin 6s linear infinite;
 }
 
 @keyframes spin{to{transform:rotate(360deg)}}
 
 .grid{
-display:grid;
-grid-template-columns:1fr 3fr;
-gap:10px;
-margin-top:10px;
+	display:grid;
+	grid-template-columns:1fr 3fr;
+	gap:10px;
+	margin-top:10px;
+}
+
+.grid-perfil{
+	display:grid;
+	margin-top:10px;
 }
 
 .card{
@@ -196,8 +201,8 @@ cursor: pointer;
 }
 
 .dock button{
-width:60px;
-height:60px;
+width:50px;
+height: 50px;
 border-radius:50%;
 border:none;
 color:#fff;
@@ -205,11 +210,27 @@ font-size:22px;
 cursor: pointer;
 }
 
+.gear{
+position:absolute;
+bottom: 110px;
+font-size: 72px;
+animation:spin 6s linear infinite;
+}
+
 .dock button:nth-child(1){background:#22c55e}
 .dock button:nth-child(2){background:#0ea5e9}
 .dock button:nth-child(3){background:#ef4444}
 .dock button:nth-child(4){background:#facc15;color:#000}
 
+}
+
+@media(max-width:450px){
+	.gear{
+	position:absolute;
+	bottom: 200px;
+	font-size: 72px;
+	animation:spin 6s linear infinite;
+	}
 }
 .copy {
     margin: 40px 0 -10px 0;
@@ -272,54 +293,56 @@ gap:10px;
 
 <body>
 
-<div class="top-actions">
-<button onclick="toggleTheme()">Tema</button>
-<button onclick="printPDF()">PDF</button>
-</div>
-
 <div class="container">
 
 <div class="header">
+		<div class="top-actions">
+			<button onclick="toggleTheme()">Tema</button>
+			<button onclick="printPDF()">PDF</button>
+		</div>
 <div>
-<h1>Luiz Fernando Rodrigues</h1>
-<div class="local"><p>📍 Maria da Fé - MG - 🇧🇷</p></div>
-<div class="objetivo">
-<p>✨Operador de Máquina Industrial | Operador de Produção ✨</p>
-<p>🚧 Meu objetivo é atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança, qualidade e eficiência em ambientes de alta performance.</p>
-</div>
-</div>
-<i class="fa-solid fa-gear gear"></i>
-</div>
+	<h1>Luiz Fernando Rodrigues</h1>
+		<div class="local"><p>📍 Maria da Fé - MG - 🇧🇷</p></div>
+	<div class="objetivo">
+		<p>✨Operador de Máquina Industrial | Operador de Produção ✨</p>
+		<p>🚧 Meu objetivo é atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança, qualidade e eficiência em ambientes de alta performance.</p>
+	</div>
+	</div>
+		<i class="fa-solid fa-gear gear"></i>
+	</div>
 
-<div class="grid">
+	<div class="grid-perfil">
+	
+		<div class="card">
+			<h2>Perfil Profissional</h2>
+				<p> Sou profissional da área industrial com cerca de 3 anos de experiência em operação de máquinas e linhas de produção.
+					Atuo com foco em segurança, qualidade e eficiência, possuo perfil proativo, facilidade de aprendizado e alto senso de
+					responsabilidade. Tenho experiência em manutenção preventiva e corretiva, além de vivência com máquinas de envase, mistura
+					de fibra óptica, prensa, solda industrial e montagem automotiva.
+				</p>
+		</div>
+	</div>
+
+	<div class="grid">
+
+	<div>
+
+		<div class="card">
+			<h2>Contato</h2>
+				<div class="contact" onclick="whatsapp()"> <i class="fa-solid fa-phone" style="color: #0ea5e9"></i> <i class="fa-brands fab fa-whatsapp" style="color: green"></i>  (35) 99150-6150</div>
+				<div class="contact" onclick="email()"> <i class="fa-solid fa-envelope" style="color: #ef4444"></i>  luizferlorena@gmail.com</div>
+		</div>
+
+		<div class="card">
+			<h2>Formação</h2>
+				<p> • Ensino Médio Completo</p>
+			<h2>Cursos</h2>
+				<p> • Informática Básica (Pacote Office - para atividades administrativas e Internet)</p>
+		</div>
+
+	</div>
 
 <div>
-
-<div class="card">
-<h2>Contato</h2>
-<div class="contact" onclick="whatsapp()"> <i class="fa-brands fab fa-whatsapp" style="color: green"></i> (35) 99150-6150</div>
-<div class="contact" onclick="email()"> <i class="fa-solid fa-envelope"></i> luizferlorena@gmail.com</div>
-</div>
-
-<div class="card">
-<h2>Formação</h2>
-<p> • Ensino Médio Completo</p>
-<h2>Cursos</h2>
-<p> • Informática Básica (Pacote Office - para atividades administrativas e Internet)</p>
-</div>
-
-</div>
-
-<div>
-
-<div class="card">
-<h2>Perfil Profissional</h2>
-<p> Sou profissional da área industrial com cerca de 3 anos de experiência em operação de máquinas e linhas de produção.
-Atuo com foco em segurança, qualidade e eficiência, possuo perfil proativo, facilidade de aprendizado e alto senso de
-responsabilidade. Tenho experiência em manutenção preventiva e corretiva, além de vivência com máquinas de envase, mistura
-de fibra óptica, prensa, solda industrial e montagem automotiva.
-</p>
-</div>
 
 <div class="card">
 <h2>Experiência Profissional</h2>
