@@ -3,355 +3,314 @@
 <head>
 <meta charset="UTF-8">
 <title>Currículo | Luiz Fernando Rodrigues</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
+<text y='50' font-size='50'>👨🏼‍🔧</text>
+</svg>">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-:root {
-    --orange: #f97316;
-    --yellow: #facc15;
-    --cyan: #06b6d4;
-	--brown: #6c3c0c;
 
-    /* DARK */
-    --bg-dark: #020617;
-    --panel-dark: #020617;
-    --border-dark: #1e293b;
-    --text-dark: #e5e7eb;
+:root{
+--orange:#f97316;
+--yellow:#facc15;
+--brown:#6c3c0c;
 
-    /* LIGHT OLD SCHOOL */
-    --bg-light: #e6e2d3;
-    --panel-light: #f5f1e6;
-    --border-light: #7c7c7c;
-    --text-light: #1c1c1c;
-    --steel: #b0b0b0;
-}
+--bg-light:#e6e2d3;
+--panel-light:#f5f1e6;
+--border-light:#7c7c7c;
+--text-light:#1c1c1c;
 
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--bg-dark);
-    color: var(--text-dark);
-    transition: .4s;
-}
-
-body.light {
-    background: var(--bg-light);
-    color: var(--text-light);
-}
-
-/* BOTÕES TOPO */
-.top-actions {
-    position: fixed;
-    top: 45px;
-    right: 40px;
-    display: flex;
-    gap: 10px;
-    z-index: 1000;
-	opacity: .90;
-}
-
-.top-actions button {
-    padding: 12px 18px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    background: linear-gradient(135deg,var(--orange),var(--yellow));
-    color:#000;
-    box-shadow: 0 6px 18px rgba(0,0,0,.5);
-}
-
-body.light .top-actions button {
-    background: linear-gradient(265deg,var(--orange),var(--yellow));
-    box-shadow: inset 0 0 10px rgba(0,0,0,.3);
-}
-
-/* LAYOUT */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* HEADER */
-.header {
-    background: linear-gradient(135deg, #020617, #1e293b);
-    border: 3px solid var(--orange);
-    border-radius: 25px;
-    padding: 15px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    box-shadow: 0 15px 40px rgba(0,0,0,.6);
-    position: relative;
-}
-
-body.light .header {
-    background: linear-gradient(135deg, #d6d2c4, #f5f1e6);
-    box-shadow: inset 0 0 20px rgba(0,0,0,.15);
-}
-
-.header h1 {
-    font-size: 36px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--orange)
-}
-
-.header p {
-    opacity: .8;
-}
-
-.local{
-	font-size: 12px;
-	margin-top: -10px;
-	text-align: left;
-}
-
-.objetivo{
-	font-size: 16px;
-	text-align: left;
-	padding-right: 15%;
-	
-}
-
-/* GEAR */
-.gear {
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-    font-size: 60px;
-    opacity: .65;
-    animation: spin 12s linear infinite;
-	color: var(--brown);
+--bg-dark:#020617;
+--panel-dark:#020617;
+--border-dark:#1e293b;
+--text-dark:#e5e7eb;
 }
 
 
-@keyframes spin {
-    from { transform: rotate(0); }
-    to { transform: rotate(360deg); }
+*{
+box-sizing:border-box;
 }
 
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 5px;
-    margin-top: 25px;
+body{
+margin:0;
+font-family:Segoe UI,Arial;
+background:var(--bg-light);
+color:var(--text-light);
+transition:.3s;
 }
 
-/* CARD */
-.card {
-    background: var(--panel-dark);
-    border: 2px solid var(--border-dark);
-    border-radius: 25px;
-    padding: 25px;
-    margin-bottom: 10px;
-    box-shadow: inset 0 0 25px rgba(0, 0, 0, .6);
+/* DARK MODE */
+
+body.dark{
+background:var(--bg-dark);
+color:var(--text-dark);
 }
 
-body.light .card {
-    background: var(--panel-light);
-    border: 2px solid var(--border-light);
-    box-shadow: inset 0 0 25px rgba(0,0,0,.5);
+
+.top-actions{
+position:fixed;
+top:45px;
+right:40px;
+display:flex;
+gap:10px;
+z-index:1000;
 }
 
-.card h2 {
-    color: var(--yellow);
-    margin: 5px;
-    text-transform: uppercase;
-    font-size: 17px;
-    letter-spacing: 1px;
+.top-actions button{
+padding:12px 18px;
+border-radius:25px;
+border:none;
+cursor:pointer;
+font-weight:bold;
+background:linear-gradient(135deg,var(--orange),var(--yellow));
 }
 
-body.light .card h2 {
-    color: #5c4b1a;
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:10px;
 }
 
-/* CONTACT */
-.contact {
-    padding: 10px;
-    border-radius: 25px;
-    margin-bottom: 15px;
-    border: 2px dashed var(--orange);
-    cursor: pointer;
-    transition: .3s;
-	text-align: center;
+.header{
+background:linear-gradient(135deg,#d6d2c4,#f5f1e6);
+border:3px solid var(--orange);
+border-radius:25px;
+padding:10px;
+display:grid;
+grid-template-columns:8fr 1fr;
+position:relative;
 }
 
-.contact:hover {
+body.dark .header{
+background:linear-gradient(135deg,#020617,#1e293b);
+}
+
+.header h1{
+	margin:0;
+	color:var(--orange);
+	font-size: 3em;
+	}
+
+.local{font-size:12px}
+
+.objetivo{font-size:14px;}
+
+.gear{
+position:absolute;
+right:15px;
+bottom:15px;
+font-size:60px;
+color:var(--brown);
+animation:spin 6s linear infinite;
+}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 3fr;
+gap:10px;
+margin-top:10px;
+}
+
+.card{
+background:var(--panel-light);
+border:2px solid var(--border-light);
+border-radius:25px;
+padding:10px;
+margin-bottom:8px;
+}
+
+body.dark .card{
+background:var(--panel-dark);
+border-color:var(--border-dark);
+}
+
+.card h2{
+margin:2px 0;
+color:#5c4b1a;
+font-size:18px;
+text-transform:uppercase;
+}
+
+body.dark .card h2{color:var(--yellow)}
+
+.contact{
+border:2px dashed var(--orange);
+border-radius:25px;
+padding:10px;
+margin-bottom:10px;
+text-align:center;
+cursor:pointer;
+font-size: 12px;
+}
+
+.contact:hover{
     background: rgba(249,115,22,.15);
     box-shadow: 0 0 15px rgba(249,115,22,.4);
 }
 
-body.light .contact {
-    border: 2px dashed var(--orange);
-
+.card p {
+ margin: 5px;
 }
 
-body.light .contact:hover {
-    background: rgba(255,215,0,.15);
-    box-shadow: 0 0 25px rgba(255,215,0,.6);
+.timeline{
+border-left:3px solid var(--orange);
+padding-left:15px;
+border-radius: 5px;
 }
 
-/* TIMELINE */
-.timeline {
-    border-left: 4px solid var(--orange);
-    padding: 15px;
+.job p{margin:4px;font-size:14px}
+
+.dock{display:none}
+
+
+
+@media(max-width:800px){
+
+.header h1{
+font-size: 2em;
 }
 
+.grid{grid-template-columns:1fr}
+.top-actions{display:none}
 
-.job p{
-	padding-left: 15px;
-	margin: 4px;
-	font-size: 14px
+.dock{
+display:flex;
+position:fixed;
+bottom:15px;
+left:50%;
+transform:translateX(-50%);
+gap:10px;
+padding: 6px 10px;
+border-radius:40px;
+border:2px solid var(--border-light);
+background:rgba(--bg-light .8);
+backdrop-filter:blur(4px);
+cursor: pointer;
 }
 
-.copy p{
-	text-align: center;
-	font-size: 12px;
-	padding-bottom: 0;
-	}
-	
-/* DOCK */
-.dock {
-    display:none;
+.dock button{
+width:60px;
+height:60px;
+border-radius:50%;
+border:none;
+color:#fff;
+font-size:22px;
+cursor: pointer;
 }
 
+.dock button:nth-child(1){background:#22c55e}
+.dock button:nth-child(2){background:#0ea5e9}
+.dock button:nth-child(3){background:#ef4444}
+.dock button:nth-child(4){background:#facc15;color:#000}
 
-@media(max-width:798px){
-	.grid{grid-template-columns:1fr;}
-	.top-actions{display:none;}
-	.local{
-		padding-right: 10%;
-	}
-
-	.objetivo{
-		padding-right: 10%;
-	}
-    .dock{
-        position:fixed;
-        bottom:15px;
-        left:50%;
-        transform:translateX(-50%);
-        background: (var(--blue), .2);
-		backdrop-filter: blur(2px);
-        border-radius: 50px;
-        padding: 5px 25px;
-        display:flex;
-        gap: 15px;
-        border:2px solid var(--orange);
-        z-index:999;
-
-		padding-top: 5px;
-    }
-
-    body.light .dock{
-        background: rgba(230,226,211,.95);
-        border:2px solid var(--border-light);
-    }
-
-    .dock button{
-        width:60px;
-        height:60px;
-        border-radius:50%;
-        border:none;
-        cursor:pointer;
-        font-size:22px;
-        color:#fff;
-        box-shadow: 0 5px 15px rgba(0,0,0,.5);
-        transition:.3s;
-    }
-
-    .dock button:nth-child(1){ background: #22c55e; }
-    .dock button:nth-child(2){ background: #0ea5e9; }
-    .dock button:nth-child(3){ background: #ef4444; }
-    .dock button:nth-child(4){ background: #facc15; color:#000; }
-
-    .dock button:hover{
-        transform: translateY(-4px) scale(1.05);
-    }
-	.copy p {
-        text-align: center;
-        font-size: 12px;
-        padding-bottom: 0px;
-        margin-top: 0px;
-        margin-bottom: auto;
+}
+.copy {
+    margin: 40px 0 -10px 0;
 }
 
-/* PRINT */
 @media print{
-    .dock,.top-actions{display:none;}
-    .grid{grid-template-columns:1fr;}
-	.copy p{display: none;}
-	}
+
+@page{size:A4;margin:10mm}
+
+body.print-light{
+background:#fff!important;
+color:#000!important;
 }
+
+body.print-light .card,
+body.print-light .header{
+background:#fff!important;
+border-color:#7c7c7c!important;
+color:#000!important;
+}
+
+body.print-light h1{
+	margin: 0;
+    color: var(--orange);
+    font-size: 3em;
+}
+body.print-light h2{
+    margin: 2px 0;
+    color: #5c4b1a;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+body.print-light p{
+	margin: 5px;
+}
+
+body.dark{background:#fff!important}
+
+.top-actions,.dock,.copy{display:none!important}
+
+.container{max-width:100%;padding:0}
+
+.grid{
+display:grid!important;
+grid-template-columns:1fr 2fr;
+gap:10px;
+}
+
+.card,.header,.job{page-break-inside:avoid}
+
+.gear{animation:none}
+
+}
+
+.copy p{text-align:center;font-size:12px}
+
 </style>
 
-<script>
-function whatsapp(){
-    window.open("https://wa.me/55991506150","_blank");
-}
-function email(){
-    window.location.href="mailto:luizferlorena@gmail.com";
-}
-function toggleTheme(){
-    document.body.classList.toggle("light");
-}
-</script>
 </head>
 
 <body>
 
-<!-- BOTÕES TOPO -->
 <div class="top-actions">
-    <button onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i> Tema</button>
-    <button onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+<button onclick="toggleTheme()">Tema</button>
+<button onclick="printPDF()">PDF</button>
 </div>
 
 <div class="container">
 
 <div class="header">
-    <div>
-        <h1>Luiz Fernando Rodrigues</h1>
-		<div class="local"><p>📍 Maria da Fé - MG</p></div>
-        <div class="objetivo"><p>✨Operador de Máquina Industrial | Operador de Produção ✨</p>
-			<p> 🚧 Meu objetivo é atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança, qualidade e eficiência em ambientes de alta performance.</p>
-		</div>
-    </div>
-    <i class="fa-solid fa-gear gear"></i>
+<div>
+<h1>Luiz Fernando Rodrigues</h1>
+<div class="local"><p>📍 Maria da Fé - MG - 🇧🇷</p></div>
+<div class="objetivo">
+<p>✨Operador de Máquina Industrial | Operador de Produção ✨</p>
+<p>🚧 Meu objetivo é atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança, qualidade e eficiência em ambientes de alta performance.</p>
+</div>
+</div>
+<i class="fa-solid fa-gear gear"></i>
 </div>
 
 <div class="grid">
 
-<!-- SIDEBAR -->
 <div>
 
 <div class="card">
-<h2>Contatos</h2>
-<div class="contact" onclick="whatsapp()"><i class="fa-brands fa-whatsapp"></i>(35) 99150-6150</div>
-<div class="contact" onclick="email()"><i class="fa-solid fa-envelope"></i> luizferlorena@gmail.com</div>
+<h2>Contato</h2>
+<div class="contact" onclick="whatsapp()"> <i class="fa-brands fab fa-whatsapp" style="color: green"></i> (35) 99150-6150</div>
+<div class="contact" onclick="email()"> <i class="fa-solid fa-envelope"></i> luizferlorena@gmail.com</div>
 </div>
 
 <div class="card">
 <h2>Formação</h2>
 <p> • Ensino Médio Completo</p>
-
 <h2>Cursos</h2>
 <p> • Informática Básica (Pacote Office - para atividades administrativas e Internet)</p>
+</div>
 
 </div>
 
-
-
-</div>
-
-<!-- MAIN -->
 <div>
-
-
 
 <div class="card">
 <h2>Perfil Profissional</h2>
@@ -401,20 +360,43 @@ de fibra óptica, prensa, solda industrial e montagem automotiva.
 </div>
 
 </div>
-	<div class="copy">
-			<p>Desenvolvido por: <a href="https://wa.me/5511992091856?text=$Olá, Franiel!" style="color: #f97316">Franiel.Inc | 2026</a></p>
-	</div>
-<!-- DOCK MOBILE -->
+
+<div class="copy">
+			<p>Desenvolvido por: <a href="https://wa.me/5511992091856?text=$Olá, Franiel Tech!" style="color: #f97316;">Franiel.Tech | 2026</a></p>
+</div>
+
 <div class="dock">
     <button onclick="whatsapp()"><i class="fa-brands fa-whatsapp"></i></button>
     <button onclick="email()"><i class="fa-solid fa-envelope"></i></button>
-    <button onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+    <button onclick="printPDF()"><i class="fa-solid fa-file-pdf"></i></button>
     <button onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i></button>
 </div>
 
+<script>
+
+const savedTheme = localStorage.getItem("theme");
+if(savedTheme==="dark") document.body.classList.add("dark");
+
+function toggleTheme(){
+document.body.classList.toggle("dark");
+localStorage.setItem("theme",document.body.classList.contains("dark")?"dark":"light");
+}
+
+function whatsapp(){
+window.open("https://wa.me/5535991506150");
+}
+
+function email(){
+window.location.href="mailto:luizferlorena@gmail.com";
+}
+
+function printPDF() {
+  document.body.classList.add("print-light");
+  window.print();
+  document.body.classList.remove("print-light");
+}
+
+</script>
+
 </body>
 </html>
-
-
-
-
