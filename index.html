@@ -115,7 +115,9 @@ body.dark .header{
     border-radius: 20px;
 	margin: 0 50px;
 	}
-	
+.objetivo h3{
+	margin: 5px !important;
+	}	
 .gear{
 	position: absolute;
     right: 45px;
@@ -259,9 +261,10 @@ body.dark .card-obj h2{color:var(--yellow)}
     }
 
     .dock button:nth-child(1){background:#22c55e}
-    .dock button:nth-child(2){background:#0ea5e9}
-    .dock button:nth-child(3){background:#ef4444}
-    .dock button:nth-child(4){background:#facc15;color:#000}
+    .dock button:nth-child(2){background:#22c55e;color:#000}
+    .dock button:nth-child(3){background:#0ea5e9}
+    .dock button:nth-child(4){background:#ef4444}
+    .dock button:nth-child(5){background:#facc15;color:#000}
 
 }
 
@@ -372,11 +375,13 @@ body.dark .card-obj h2{color:var(--yellow)}
         text-transform: uppercase;
     }
 	
-    h3 {
+   .objetivo {
         font-size: 14px !important;
-		margin: 0 50px;
+		margin: 4px 50px;
     }
-
+	.objetivo h3{
+		margin: 0px !important;
+	}	
     p {
 		font-size: 12px;
 		margin: 0.5px !important;
@@ -565,7 +570,7 @@ body.dark .card-obj h2{color:var(--yellow)}
 
 <div class="dock">
     <button onclick="whatsapp()"><i class="fa-brands fa-whatsapp"></i></button>
-    <button onclick="whatsapp2()"><i class="fa-brands fa-whatsapp" style="color: #06402B"></i></button>
+    <button onclick="whatsapp2()"><i class="fa-brands fa-whatsapp"></i></button>
 	<button onclick="email()"><i class="fa-solid fa-envelope"></i></button>
     <button onclick="printPDF()"><i class="fa-solid fa-file-pdf"></i></button>
     <button onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i></button>
@@ -609,8 +614,3 @@ function printPDF() {
 
 </body>
 </html>
-
-
-
-
-
