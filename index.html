@@ -122,7 +122,6 @@ body.dark .header{
 }
 
 .grid-perfil{
-	display:grid;
 	margin-top:10px;
 }
 
@@ -177,121 +176,207 @@ body.dark .card h2{color:var(--yellow)}
 
 .dock{display:none}
 
-
-
 @media(max-width:800px){
+    .grid{grid-template-columns: 1fr;}
+    .header{
+        display: block;
+        }
 
-.header h1{
-	font-size: 2em;
+    .header h1{
+	    font-size: 2.4em;
+        }
+    .top-actions{display:none}
+
+    .dock{
+	    display:flex;
+	    position:fixed;
+	    bottom:15px;
+	    left:50%;
+	    transform:translateX(-50%);
+	    gap:10px;
+	    padding: 6px 10px;
+	    border-radius:40px;
+	    border:2px dashed var(--orange);
+	    /*background:rgba(--bg-light .8);*/
+	    backdrop-filter:blur(4px);
+	    cursor: pointer;
+    }
+
+    .dock button{
+	    width:50px;
+	    height: 50px;
+	    border-radius:50%;
+	    border:none;
+	    color:#fff;
+	    font-size:22px;
+	    cursor: pointer;
+    }
+
+    .gear{
+	    position:absolute;
+        bottom: 75px;
+	    font-size: 72px;
+	    animation:spin 6s linear infinite;
+    }
+
+    .dock button:nth-child(1){background:#22c55e}
+    .dock button:nth-child(2){background:#0ea5e9}
+    .dock button:nth-child(3){background:#ef4444}
+    .dock button:nth-child(4){background:#facc15;color:#000}
+
 }
 
-.grid{grid-template-columns:1fr}
-.top-actions{display:none}
-
-.dock{
-	display:flex;
-	position:fixed;
-	bottom:15px;
-	left:50%;
-	transform:translateX(-50%);
-	gap:10px;
-	padding: 6px 10px;
-	border-radius:40px;
-	border:2px dashed var(--orange);
-	/*background:rgba(--bg-light .8);*/
-	backdrop-filter:blur(4px);
-	cursor: pointer;
-}
-
-.dock button{
-	width:50px;
-	height: 50px;
-	border-radius:50%;
-	border:none;
-	color:#fff;
-	font-size:22px;
-	cursor: pointer;
-}
-
-.gear{
-	position:absolute;
-	bottom: 110px;
-	font-size: 72px;
-	animation:spin 6s linear infinite;
-}
-
-.dock button:nth-child(1){background:#22c55e}
-.dock button:nth-child(2){background:#0ea5e9}
-.dock button:nth-child(3){background:#ef4444}
-.dock button:nth-child(4){background:#facc15;color:#000}
-
-}
-
-@media(max-width:450px){
+@media(max-width:520px){
 	.gear{
-	position:absolute;
-	bottom: 200px;
-	font-size: 72px;
-	animation:spin 6s linear infinite;
+	    position:absolute;
+	    bottom: 95px;
+	    font-size: 60px;
+	    animation:spin 6s linear infinite;
 	}
+    .header h1{
+        font-size: 1.9em;
+    }
+
 }
+
+@media(max-width:475px){
+	.gear{
+       display:none;
+	}
+    .header {
+    text-align: center;    
+    }
+    .grid-perfil p{
+    text-align: justify;        
+    }
+
+
+}
+
 .copy {
     margin: 40px 0 -10px 0;
 }
-
-@media print{
-
-@page{size:A4;margin:8mm}
-
-body.print-light{
-	background:#fff!important;
-	color:#000!important;
+.copy p{
+    text-align:center;       
+    font-size:12px
 }
 
-body.print-light .card,
-body.print-light .header{
-	background:#fff!important;
-	border-color:#7c7c7c!important;
-	color:#000!important;
+
+/* IMPRESSÃO A4 */
+@media print {
+
+    /* Página A4 */
+    @page {
+        size: A4;
+        margin: 6mm;
+    }
+    .grid{grid-template-columns: 1fr;}
+    /* Reset geral para impressão */
+    * {
+        animation: none !important;
+        transition: none !important;
+        box-shadow: none !important;
+    }
+
+    html, body {
+        width: 210mm;
+        height: 297mm;
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 12px;
+    }
+
+    /* Força layout desktop */
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+    }
+
+    .grid {
+        display: grid !important;
+        grid-template-columns: 1fr 3fr !important;
+        gap: 8px !important;
+    }
+
+    .header {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        background: #fff !important;
+        border: 2px solid #7c7c7c !important;
+        border-radius: 18px !important;
+        page-break-inside: avoid;
+        text-align: center;
+        padding-top: -25;
+    }
+
+    /* Tipografia */
+    h1 {
+        color: #f97316 !important;
+        font-size: 2.4em !important;
+        margin: 0;
+    }
+
+    h2 {
+        color: #42381b !important;
+        font-size: 14px !important;
+        margin: 2px 0;
+        padding-left: 4px;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin: 4px 0;
+        padding-left: 6px;
+        font-size: 12px;
+    }
+
+    /* Cards */
+    .card {
+        background: #fff !important;
+        border: 1px solid #7c7c7c !important;
+        border-radius: 18px !important;
+        page-break-inside: avoid;
+    }
+
+    .timeline {
+        border-left: 2px solid #f97316 !important;
+        padding-left: 12px;
+    }
+
+    .job {
+        page-break-inside: avoid;
+        padding-bottom: 2px;
+    }
+
+    /* Remove elementos interativos/visuais */
+    .gear,
+    .top-actions,
+    .dock,
+    button,
+    .copy,
+    [role="button"],
+    a[href]:after {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    /* Garante modo claro */
+    body.dark,
+    body.print-light {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    body.dark .card,
+    body.dark .header {
+        background: #fff !important;
+        border-color: #7c7c7c !important;
+        color: #000 !important;
+    }
 }
 
-body.print-light h1{
-	margin: 0;
-    color: var(--orange) !important;
-    font-size: 3em;
-}
-body.print-light h2{
-    margin: 2px 0;
-    color: #42381b !important;
-    font-size: 18px;
-    text-transform: uppercase;
-}
-body.print-light p{
-	margin: 5px;
-}
 
-body.dark{background:#fff!important}
-
-.top-actions,.dock,.copy{display:none!important}
-
-.container{max-width:100%;padding:0}
-
-.grid{
-	display:grid!important;
-	grid-template-columns:1fr 2fr;
-	gap:10px;
-}
-
-.card,.header,.job{page-break-inside:avoid}
-
-.gear{
-	bottom: 90px !important;
-	animation:none
-	}
-
-}
-
-.copy p{text-align:center;font-size:12px}
 
 </style>
 
@@ -309,7 +394,7 @@ body.dark{background:#fff!important}
 	<h1>Luiz Fernando Rodrigues</h1>
 		<div class="local"><p>📍 Maria da Fé - MG	<span class="fi fi-br"></span></p></div> 
 	<div class="objetivo">
-		<p>✨Operador de Máquina Industrial | Operador de Produção ✨</p>
+		<p>✨Operador de Máquina Industrial | Linha de Produção ✨</p>
 		<p>🚧 Meu objetivo é atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança, qualidade e eficiência em ambientes de alta performance.</p>
 	</div>
 
@@ -356,30 +441,55 @@ body.dark{background:#fff!important}
 <div class="timeline">
 
 <div class="job">
-<strong>CIMED</strong> — Operador de Máquina I e II (Jul/2023 ⮕ Ago/2024) <br>
-	<p> • Operação de máquinas de envase no setor produtivo.</p>
-	<p> • Monitoramento contínuo dos processos produtivos.</p>
-	<p> • Realização de manutenção preventiva e corretiva.</p>
-	<p> • Controle de materiais e insumos.</p>
-	<p> • Preenchimento de planilhas, relatórios e registros de produção.</p>
-	<p> • Atuação com foco em segurança, qualidade e produtividade.</p>
+    <strong>CIMED</strong> — (Jul/2023 ⮕ Ago/2024)<br><strong>Cargo:</strong> Operador de Máquina I e II<br>
+	    <p> • Operação de máquinas de envase no setor produtivo.</p>
+	    <p> • Monitoramento contínuo dos processos produtivos.</p>
+	    <p> • Controle de materiais e insumos.</p>
+	    <p> • Atuação com foco em segurança, qualidade e produtividade.</p>
 </div>
-
 <div class="job">
-<strong>HT Cabos e Tecnologia Ltda</strong> — Operador de Máquina II (Jan/2023 ⮕ Mai/2023)<br>
+<strong>HT Cabos e Tecnologia Ltda.</strong> — (Jan/2023 ⮕ Mai/2023)<br><strong>Cargo:</strong> Operador de Máquina II<br>
 	<p>• Operação de máquina de mistura de fibra óptica – Modelo SZ.</p>
 	<p>• Monitoramento do processo produtivo.</p>
 	<p>• Execução de manutenção básica e preventiva.</p>
 	<p>• Preenchimento de checklists e controles operacionais.</p>
-	<p>• Atuação conforme normas de segurança e qualidade.</p>
 </div>
-
 <div class="job">
-<strong>Aethra Sistemas Automotivos</strong> — Montador de Veículos - Linha de Produção (Fev/2023 ⮕ Jun/2022)<br>
-	<p>• Montagem de peças e componentes automotivos.</p>
-	<p>• Execução de reparos e ajustes técnicos.</p>
+<strong>Aethra Sistemas Automotivos</strong> — (Fev/2023 ⮕ Jun/2022)<br><strong>Cargo:</strong> Montador de Veículos - Linha de Produção<br>
+	<p>• Montagem e ajustes técnicos de peças e componentes automotivos.</p>
 	<p>• Controle de materiais e organização do posto de trabalho.</p>
 	<p>• Inspeção de qualidade com foco em precisão e acabamento.</p>
+</div>
+<div class="job">
+<strong>Beco da Pamonha Comércio e Lanchonete</strong> — (Mar/2020 ⮕ Ago/2021)<br><strong>Cargo:</strong> Operador de Máquina<br>
+    <p> • Operação de máquinas para preparo de alimentos.</p>
+    <p> • Limpeza e higienização de máquinas e área de produção.</p>
+    <p> • Atuação seguindo normas de higiene e controle de qualidade.</p>
+</div>
+<div class="job">
+<strong>Tntech Serviços para Automação Predial e Telecom Ltda.</strong> — (Ago/2014 ⮕ Ago/2017)<br><strong>Cargo:</strong> Técnico de Manutenção e Eletrônica<br>
+    <p> • Instalação e suporte a sistemas de automação predial.</p>
+    <p> • Diagnóstico e reparo de falhas técnicas.</p>
+    <p> • Configuração e testes de equipamentos eletrônicos.</p>
+    <p> • Atendimento conforme normas técnicas e de segurança.</p>
+</div>
+<div class="job">
+<strong>Madrigal Comércio e Serviços em Drywall Ltda.</strong> — (Jul/2011 ⮕ Mar/2014)<br><strong>Cargo:</strong> Montador<br>
+    <p> • Montagem de estruturas em drywall (paredes, forros e acabamentos)</p>
+    <p> • Leitura e interpretação de projetos técnicos.</p>
+    <p> • Atuação com foco em qualidade, prazos e segurança.</p>
+</div>
+<div class="job">
+<strong>Rio Branco Alimentos S/A.</strong> — (Nov/2008 ⮕ Nov/2009)<br><strong>Cargo:</strong> Auxiliar Industrial <br>
+    <p> • Apoio nas atividades da linha de produção industrial.</p>
+    <p> • Abastecimento de máquinas e esteiras.</p>
+    <p> • Organização e limpeza do ambiente produtivo.</p>
+</div>
+<div class="job">
+<strong>WLS Pneumáticos e Moto - Indústria e Comércio Ltda.</strong> — (Fev/2007 ⮕ Jul/2008)<br><strong>Cargo:</strong> Conferente e Almoxarife  <br>
+    <p> • Organização, controle, registros de entradas e saídas de estoque no almoxarifado.</p>
+    <p> • Separação e distribuição de materiais conforme requisições.</p>
+    <p> • Apoio no inventário e controle de perdas, com foco em organização, precisão e controle.</p>
 </div>
 
 </div>
@@ -429,3 +539,4 @@ function printPDF() {
 
 </body>
 </html>
+
