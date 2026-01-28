@@ -38,7 +38,6 @@
 }
 
 body{
-	margin:0;
 	font-family:Segoe UI,Arial;
 	background:var(--bg-light);
 	color:var(--text-light);
@@ -55,7 +54,7 @@ body.dark{
 
 .top-actions{
 position: relative;
-    top: 50px;
+    top: 40px;
     right: 10px;
     display: flex;
     gap: 10px;
@@ -64,7 +63,7 @@ position: relative;
 }
 
 .top-actions button{
-	padding:12px 18px;
+	padding: 10px 10px;
 	border-radius:25px;
 	border:none;
 	cursor:pointer;
@@ -76,16 +75,16 @@ position: relative;
 .container{
 	max-width:1200px;
 	margin:auto;
-	padding:10px;
+    padding: 0px 15px;
 }
 
 .header{
 	background:linear-gradient(135deg,#d6d2c4,#f5f1e6);
-	border:3px solid var(--orange);
+	border:4px solid var(--orange);
 	border-radius:25px;
 	padding:10px;
-	display:grid;
-	grid-template-columns:8fr 1fr;
+	/*display:grid;*/
+	/*grid-template-columns:8fr 1fr;*/
 	position:relative;
 }
 
@@ -96,18 +95,35 @@ body.dark .header{
 .header h1{
 	margin:0;
 	color:var(--orange);
-	font-size: 3em;
+	font-size: 4em;
+	text-align: center;
+	}
+	
+.header p{
+	text-align: center;
 	}
 
-.local{font-size:12px}
+.local{
+	font-size:14px;
+	text-align: center;	
+}
 
-.objetivo{font-size:14px;}
+.objetivo{font-size:16px;}
 
+.objetivo h3{
+    font-size: 16px;
+    text-align: center;
+    border: 2px dashed var(--orange);
+    border-radius: 20px;
+	margin: 0 50px;
+}
+
+	
 .gear{
-	position:absolute;
-	right:15px;
-	bottom:15px;
-	font-size:60px;
+	position: absolute;
+    right: 45px;
+    /* bottom: 125px; */
+    font-size: 60px;
 	color:var(--brown);
 	animation:spin 6s linear infinite;
 }
@@ -127,15 +143,10 @@ body.dark .header{
 
 .card{
 	background:var(--panel-light);
-	border:2px solid var(--border-light);
+	border:3px solid var(--border-light);
 	border-radius:25px;
 	padding:10px;
 	margin-bottom:8px;
-}
-
-body.dark .card{
-	background:var(--panel-dark);
-	border-color:var(--border-dark);
 }
 
 .card h2{
@@ -145,7 +156,35 @@ body.dark .card{
 	text-transform:uppercase;
 }
 
+.card-obj{
+	background:var(--panel-light);
+	border:4px solid var(--orange);
+	border-radius:25px;
+	padding:10px;
+	margin-bottom:8px;
+	color: var(--dark);
+}
+
+.card-obj h2{
+	margin:2px 0;
+	color:#5c4b1a;
+	font-size:18px;
+	text-transform:uppercase;
+}
+
+body.dark .card{
+	background:var(--panel-dark);
+	border-color:var(--border-dark);
+}
+
+body.dark .card-obj{
+	background:var(--panel-dark);
+	border-color:var(--orange);
+}
+
 body.dark .card h2{color:var(--yellow)}
+
+body.dark .card-obj h2{color:var(--yellow)}
 
 .contact{
 	border:2px dashed var(--orange);
@@ -213,10 +252,10 @@ body.dark .card h2{color:var(--yellow)}
     }
 
     .gear{
-	    position:absolute;
-        bottom: 75px;
-	    font-size: 72px;
-	    animation:spin 6s linear infinite;
+		position: absolute;
+        /* bottom: 5px; */
+        font-size: 50px;
+        /* right: 5px;*/
     }
 
     .dock button:nth-child(1){background:#22c55e}
@@ -268,7 +307,7 @@ body.dark .card h2{color:var(--yellow)}
     /* Página A4 */
     @page {
         size: A4;
-        margin: 6mm;
+        margin: 4mm;
     }
     .grid{grid-template-columns: 1fr;}
     /* Reset geral para impressão */
@@ -296,49 +335,64 @@ body.dark .card h2{color:var(--yellow)}
     .grid {
         display: grid !important;
         grid-template-columns: 1fr 3fr !important;
-        gap: 8px !important;
+        gap: 6px !important;
     }
 
     .header {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
         background: #fff !important;
-        border: 2px solid #7c7c7c !important;
-        border-radius: 18px !important;
+        border: 2px solid var(--orange) !important;
+        border-radius: 20px !important;
         page-break-inside: avoid;
         text-align: center;
-        padding-top: -25;
+        padding: 0px !important;
+		margin: 0px !important;
+		
     }
+	.objetivo{
+	        padding-bottom: 4px !important;
+	}
 
     /* Tipografia */
-    h1 {
+    .header h1 p{
+     margin: 0px !important;
+	 padding: 0px !important;
+
+	}
+	
+	h1 {
         color: #f97316 !important;
-        font-size: 2.4em !important;
-        margin: 0;
+        font-size: 3em !important;
     }
 
     h2 {
         color: #42381b !important;
         font-size: 14px !important;
         margin: 2px 0;
-        padding-left: 4px;
+        padding-left: 2px;
         text-transform: uppercase;
+    }
+	
+    h3 {
+        font-size: 14px !important;
+		margin: 0 50px;
     }
 
     p {
-        margin: 4px 0;
-        padding-left: 6px;
-        font-size: 12px;
+		font-size: 12px;
+		margin: 0.5px !important;
     }
 
     /* Cards */
     .card {
         background: #fff !important;
-        border: 1px solid #7c7c7c !important;
-        border-radius: 18px !important;
-        page-break-inside: avoid;
+        border: 2px solid #7c7c7c !important;
+        border-radius: 20px !important;
     }
-
+	
+    .card-obj {
+		border: 2px solid var(--orange) !important;
+	}
+	
     .timeline {
         border-left: 2px solid #f97316 !important;
         padding-left: 12px;
@@ -394,13 +448,14 @@ body.dark .card h2{color:var(--yellow)}
 	<h1>Luiz Fernando Rodrigues</h1>
 		<div class="local"><p>📍 Maria da Fé - MG	<span class="fi fi-br"></span></p></div> 
 	<div class="objetivo">
-		<p>✨Operador de Máquina Industrial | Linha de Produção ✨</p>
-		<p>🚧 Meu objetivo é atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança, qualidade e eficiência em ambientes de alta performance.</p>
+		<h3>✨Operador de Máquina Industrial | Linha de Produção ✨</h3>
+		<!--<p>🚧 Meu objetivo é atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança, qualidade e eficiência em ambientes de alta performance.</p>
+		-->
 	</div>
 
-	</div>
-		<i class="fa-solid fa-gear gear"></i>
-	</div>
+</div>
+		
+</div>
 
 	<div class="grid-perfil">
 	
@@ -417,7 +472,10 @@ body.dark .card h2{color:var(--yellow)}
 	<div class="grid">
 
 	<div>
-
+		<div class="card-obj">
+			<h2>Objetivo</h2>
+				<p>🚧 Meu objetivo é atuar como Operador de Máquina Industrial, contribuindo com produtividade, segurança, qualidade e eficiência em ambientes de alta performance.</p>
+		</div>
 		<div class="card">
 			<h2>Contato</h2>
 				<div class="contact" onclick="whatsapp()"> <i class="fa-solid fa-phone" style="color: #0ea5e9"></i> <i class="fa-brands fab fa-whatsapp" style="color: green"></i>  (35) 99150-6150</div>
@@ -436,7 +494,7 @@ body.dark .card h2{color:var(--yellow)}
 <div>
 
 <div class="card">
-<h2>Experiência Profissional</h2>
+<div> <h2>Experiência Profissional <!--<i class="fa-solid fa-gear gear">--></i></h2> </div>
 
 <div class="timeline">
 
@@ -539,4 +597,5 @@ function printPDF() {
 
 </body>
 </html>
+
 
