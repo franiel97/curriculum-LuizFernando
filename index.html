@@ -479,6 +479,7 @@ body.dark .card-obj h2{color:var(--yellow)}
 		<div class="card">
 			<h2>Contato</h2>
 				<div class="contact" onclick="whatsapp()"> <i class="fa-solid fa-phone" style="color: #0ea5e9"></i> <i class="fa-brands fab fa-whatsapp" style="color: green"></i>  (35) 99150-6150</div>
+				<div class="contact" onclick="whatsapp2()"> <i class="fa-solid fa-phone" style="color: #0ea5e9"></i> <i class="fa-brands fab fa-whatsapp" style="color: green"></i>  (35) 99217-2174</div>
 				<div class="contact" onclick="email()"> <i class="fa-solid fa-envelope" style="color: #ef4444"></i>  luizferlorena@gmail.com</div>
 		</div>
 
@@ -564,7 +565,8 @@ body.dark .card-obj h2{color:var(--yellow)}
 
 <div class="dock">
     <button onclick="whatsapp()"><i class="fa-brands fa-whatsapp"></i></button>
-    <button onclick="email()"><i class="fa-solid fa-envelope"></i></button>
+    <button onclick="whatsapp2()"><i class="fa-brands fa-whatsapp" style="color: #06402B"></i></button>
+	<button onclick="email()"><i class="fa-solid fa-envelope"></i></button>
     <button onclick="printPDF()"><i class="fa-solid fa-file-pdf"></i></button>
     <button onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i></button>
 </div>
@@ -579,8 +581,18 @@ document.body.classList.toggle("dark");
 localStorage.setItem("theme",document.body.classList.contains("dark")?"dark":"light");
 }
 
-function whatsapp(){
-window.open("https://wa.me/5535991506150");
+function abrirWhatsapp() {
+	const numero = "5535991506150";
+	const mensagem = encodeURIComponent("Olá, Luiz!");
+	const link = `https://wa.me/${numero}?text=${mensagem}`;
+	window.open(link, "_blank");
+}
+	
+function whatsapp2(){
+	const numero = "5535992172174";
+	const mensagem = encodeURIComponent("Olá, Luiz!");
+	const link = `https://wa.me/${numero}?text=${mensagem}`;
+	window.open(link, "_blank");
 }
 
 function email(){
@@ -597,6 +609,7 @@ function printPDF() {
 
 </body>
 </html>
+
 
 
 
